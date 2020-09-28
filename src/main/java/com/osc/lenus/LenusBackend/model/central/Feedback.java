@@ -11,6 +11,9 @@ public class Feedback {
     @Id
     private String id;
     private String hotelId;
+    private String clientId;
+    private String name;
+    private String department;
     private String text;
     private int stars;
 }

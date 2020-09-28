@@ -43,6 +43,6 @@ public class Reservation {
     private List<Recommandation> recommandations = new ArrayList<>();
 
     @DBRef
-    private List<Food> purchases = new ArrayList<>();
+    private List<Item> purchases = new ArrayList<>();
 
 }

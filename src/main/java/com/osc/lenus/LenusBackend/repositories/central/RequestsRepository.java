@@ -9,6 +9,7 @@ import java.util.List;
 @Repository
 public interface RequestsRepository extends MongoRepository<Request, String> {
     public List<Request> findByDepartmentId(String departmentId);
-    public List<Request> findByDepartmentIdAndFloor(String departmentId, int floor);
+    public List<Request> findByHotelIdAndFloor(String departmentId, int floor);
     public List<Request> findByHotelId(String hotelId);
+    public List<Request> findByResCodeOrderByIdDesc(String resCode);
 }

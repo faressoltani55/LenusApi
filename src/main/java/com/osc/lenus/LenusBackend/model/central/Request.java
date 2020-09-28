@@ -10,8 +10,9 @@ public class Request {
     @Id
     private String id;
     private String hotelId;
-    private String departmentId;
+    private String resCode;
     private String name;
+    private String departmentId;
     private int roomNumber;
     private int floor;
     private String text;

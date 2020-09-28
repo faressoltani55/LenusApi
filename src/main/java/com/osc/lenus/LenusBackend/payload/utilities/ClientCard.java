@@ -5,6 +5,8 @@ import com.osc.lenus.LenusBackend.model.central.Client;
 import com.osc.lenus.LenusBackend.model.central.Preference;
 import com.osc.lenus.LenusBackend.model.central.Feedback;
 import com.osc.lenus.LenusBackend.model.central.Request;
+import com.osc.lenus.LenusBackend.model.local.Food;
+import com.osc.lenus.LenusBackend.model.local.Item;
 import com.osc.lenus.LenusBackend.model.local.Reservation;
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -32,11 +34,13 @@ public class ClientCard {
     private Date arrivalDate;
     private boolean adult;
 
-    private List<String> preferences = new ArrayList<>();
+    private List<String> primordials = new ArrayList<>();
+    private List<String> essentials = new ArrayList<>();
+    private List<String> others = new ArrayList<>();
 
     private List<String> reviews = new ArrayList<>();
 
-    private List<String> requests = new ArrayList<>();
+    private List<String> perchases = new ArrayList<>();
 
     public ClientCard(Reservation reservation, Client client) {
         SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ssZ");
@@ -51,12 +55,16 @@ public class ClientCard {
         this.imgUrl = client.getImgUrl();
         this.birthDate = client.getBirthDate();
         this.country = client.getAddress().getCountry();
-        for(Preference preference : client.getPreferences())
-            this.preferences.addAll(preference.getValues());
+        for(Preference preference : client.getPrimordials())
+            this.primordials.addAll(preference.getValues());
+        for(Preference preference : client.getEssentials())
+            this.essentials.addAll(preference.getValues());
+        for(Preference preference : client.getOthers())
+            this.others.addAll(preference.getValues());
         for(Feedback feedback : client.getFeedbacks())
             this.reviews.add(feedback.getText());
-        for(Request request : client.getRequests())
-            this.requests.add(request.getText());
+        for(Item item : reservation.getPurchases())
+            this.perchases.add(item.getName());
     }
 
     public ClientCard(Client client) {

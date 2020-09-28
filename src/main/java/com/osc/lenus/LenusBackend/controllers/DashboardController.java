@@ -37,9 +37,9 @@ public class DashboardController {
         return new ContactGraph(this.hotelResponsibleServices.getDots(hotelName), this.hotelResponsibleServices.getContactLines(hotelName));
     }
 
-    @GetMapping("dashboard/{hotelName}/requests")
-    public List<Request> getRequests(@PathVariable String hotelName) {
-        return this.hotelResponsibleServices.getRequests(hotelName);
+    @GetMapping("dashboard/{deptId}/requests")
+    public List<Request> getRequests(@PathVariable String deptId) {
+        return this.hotelResponsibleServices.getRequests(deptId);
     }
 
     // Clients endpoints :
@@ -97,7 +97,7 @@ public class DashboardController {
     // Requests endpoints :
 
 
-    @PatchMapping("dashboard/{hotelName}/requests")
+    @PatchMapping("dashboard/requests")
     public void changeRequestStatus(@RequestBody Request request) {
         this.hotelResponsibleServices.changeRequestStatus(request);
     }

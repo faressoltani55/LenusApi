@@ -27,4 +27,6 @@ public interface ReservationRepository extends MongoRepository<Reservation,Strin
     public List<Reservation> findByGroupCode(String groupCode);
 
     public List<Reservation> findByRoomNumber(int roomNumber);
+
+    public boolean existsByReservationCodeAndClientId(String reservationCode, String clientId);
 }

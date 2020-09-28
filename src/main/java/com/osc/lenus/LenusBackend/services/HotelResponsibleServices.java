@@ -105,14 +105,11 @@ public class HotelResponsibleServices {
         return occupations;
     }
 
-    public List<Request> getRequests(String hotelId) {
+    public List<Request> getRequests(String deptId) {
+        String hotelId = this.hotelsRepository.findByName(this.hotelResponsibleRepository.findByDepartmentId(deptId).getHotelName()).getId();
         return this.requestsRepository.findByHotelId(hotelId);
     }
 
-
-    public List<Request> getRequestsByFloor(String deptId, int floor) {
-        return this.requestsRepository.findByDepartmentIdAndFloor(deptId,floor);
-    }
 
 
     public List<ContactDot> getDots(String hotelName) {

@@ -40,8 +40,15 @@ public class Client {
     @Indexed(unique = true)
     private String idCard = "";
 
+    //preferences
     @DBRef
-    private List<Preference> preferences = new ArrayList<>();
+    private List<Preference> primordials = new ArrayList<>();
+
+    @DBRef
+    private List<Preference> essentials = new ArrayList<>();
+
+    @DBRef
+    private List<Preference> others = new ArrayList<>();
 
     @DBRef
     private Address address = null;
@@ -52,8 +59,6 @@ public class Client {
     @DBRef
     private List<Feedback> feedbacks = new ArrayList<>();
 
-    @DBRef
-    private List<Request> requests = new ArrayList<>();
 
     public Client(String username, String email, String password) {
         this.username = username;

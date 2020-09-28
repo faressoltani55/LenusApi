@@ -14,4 +14,5 @@ public interface HotelResponsibleRepository extends MongoRepository<HotelRespons
     boolean existsByEmail(String email);
     public List<HotelResponsible> findByChainNameAndHotelName(String chainName, String hotelName);
     public void deleteByUsername(String username);
+    public HotelResponsible findByDepartmentId(String deptId);
 }
