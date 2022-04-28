@@ -15,9 +15,9 @@ spring:
 
 mongodb:
   central:
-    uri: "mongodb+srv://m001-student:testtest@testcluster.yhrmt.mongodb.net/myDatabase?retryWrites=true&w=majority"
+    uri: "mongodb+srv://m001-student:password@testcluster.yhrmt.mongodb.net/myDatabase?retryWrites=true&w=majority"
   local:
-    uri: "mongodb+srv://fares:test@cluster0.csscd.gcp.mongodb.net/LocalDB?retryWrites=true&w=majority"
+    uri: "mongodb+srv://fares:password@cluster0.csscd.gcp.mongodb.net/LocalDB?retryWrites=true&w=majority"
 
 lenus:
   app:
